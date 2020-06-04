@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="KassaApp.BetalenControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KassaApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures/BetalenControl.png"/>
+        </Grid.Background>
+        <ComboBox HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="207" Height="40" BorderBrush="Black" Background="#FF6A2200"/>
+        <DataGrid HorizontalAlignment="Left" Height="300" Margin="10,106,0,0" VerticalAlignment="Top" Width="236" Background="#FF6A0000" BorderBrush="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,77,0,0" TextWrapping="Wrap" Text="Bestelde Producten:" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Klant Selectie:" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="10,411,0,0" TextWrapping="Wrap" Text="Totaal Prijs Week:" VerticalAlignment="Top" Width="236" FontSize="20" FontWeight="Bold" BorderBrush="#FF060606" Background="#FF6A0000" Foreground="White"/>
+        <Button Content="Er is betaald, verwijder klant!" HorizontalAlignment="Left" Margin="475,398,0,0" VerticalAlignment="Top" Width="315" Height="42" Foreground="White" Background="#FFE00000" FontSize="22" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Margin="222,37,0,0" VerticalAlignment="Top" Width="64" Height="40" BorderBrush="Black" Background="#FF6A2200"/>
+        <TextBlock HorizontalAlignment="Left" Margin="222,10,0,0" TextWrapping="Wrap" Text="Week:" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="475,364,0,0" TextWrapping="Wrap" Text="Totaal Prijs Alle Weken:" VerticalAlignment="Top" Width="315" FontSize="20" FontWeight="Bold" BorderBrush="#FF060606" Background="#FF6A0000" Foreground="White"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BlackTulipDB" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI-HENDRIK\SQLEXPRESS;Initial Catalog=BlackTulipDB;Integrated Security=True" SettingsObjectName="KassaApp.Properties.Settings" SettingsPropertyName="BlackTulipDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bestellingen" Member="bestellingens">
+    <Type Name="bestellingen">
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Datum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="bestellingen_Item" Member="Items" ThisKey="BID" OtherKey="BID" Type="Item" />
+      <Association Name="klant_bestellingen" Member="klant" ThisKey="KID" OtherKey="KID" Type="klant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item" Member="Items">
+    <Type Name="Item">
+      <Column Name="IID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hoeveelheid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="bestellingen_Item" Member="bestellingen" ThisKey="BID" OtherKey="BID" Type="bestellingen" IsForeignKey="true" />
+      <Association Name="product_Item" Member="product" ThisKey="PID" OtherKey="PID" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.klant" Member="klants">
+    <Type Name="klant">
+      <Column Name="KID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Stad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MobielNummer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="klant_bestellingen" Member="bestellingens" ThisKey="KID" OtherKey="KID" Type="bestellingen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.producttypen" Member="producttypens">
+    <Type Name="producttypen">
+      <Column Name="PtID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Omschrijving" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="producttypen_product" Member="products" ThisKey="PtID" OtherKey="PtID" Type="product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.product" Member="products">
+    <Type Name="product">
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductNaam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PtID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Prijs" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Afbeelding" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="product_Item" Member="Items" ThisKey="PID" OtherKey="PID" Type="Item" />
+      <Association Name="producttypen_product" Member="producttypen" ThisKey="PtID" OtherKey="PtID" Type="producttypen" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

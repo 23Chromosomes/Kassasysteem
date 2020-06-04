@@ -1,0 +1,22 @@
+﻿<Window x:Class="KassaApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KassaApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600" Background="{x:Null}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures/BackgroundsBackground.png"/>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Left" Width="98" Background="Black">
+            <Button x:Name="HomeBtn" Content="Home" Foreground="#FF12C100" FontSize="22" FontWeight="Bold" Height="60" BorderBrush="White" Click="HomeBtn_Click" Background="Black"/>
+            <Button x:Name="BestelBtn" Content="Bestellen" Foreground="#FF12C100" FontSize="22" FontWeight="Bold" Height="60" BorderBrush="White" Click="BestelBtn_Click" Background="Black"/>
+            <Button Content="Klanten" Foreground="#FF12C100" FontSize="22" FontWeight="Bold" Height="60" BorderBrush="White" Click="Button_Click" Background="Black"/>
+            <Button x:Name="ProductBtn" Content="Product" Foreground="#FF12C100" FontSize="22" FontWeight="Bold" Height="60" BorderBrush="White" Click="ProductBtn_Click" Background="Black"/>
+        </StackPanel>
+        <Grid x:Name="MenuContent" Margin="98,0,0,0"/>
+
+    </Grid>
+</Window>
